@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Rank" ALTER COLUMN "fotoUrl" DROP NOT NULL;
