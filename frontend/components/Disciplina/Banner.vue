@@ -1,37 +1,31 @@
 <template>
-  <NuxtLink to="/" class="max-w-[300px] items-center">
-    <UICard class="relative w-32 h-10 m-auto translate-y-3 text-center -z-50">
-      <h1 class="font-semibold">{{ props.disciplina.codigo }}</h1>
-    </UICard>
-    <UICard class="z-50 bg-white hover:border-zinc-300 hover:shadow-lg">
-      <div class="relative py-2 text-center font-semibold border-b border-zinc-300">
-        {{ props.disciplina.nome }}
-        <img src="@/assets/gamer.jfif" alt="Rank" 
-        class="h-12 inline absolute -top-5 -right-5">
-      </div>
-      <div class="px-2 pt-1 h-28">
-        <!-- info -->
-      </div>
-      <div class="pl-2 py-[2px] border-t border-zinc-300 relative">
-        <div class="h-6 flex items-center">
-          <UIIcon icon="mdi:user" :size="6"/>
-          <span class="m-0 text-sm">{{ props.disciplina.nomeProfessor }}</span>
+  <!-- <UICard class="bg-[url('@/assets/fundo.jfif')]"> -->
+  <UICard class="border border-black/40 relative flex flex-col justify-between min-h-[250px] bg-zinc-200 mx-auto mt-10">
+    <div class="text-center mt-2">
+      <h1 class="font-bold text-3xl">Banco de Dados</h1>
+      <span class="font-semibold">DCC060</span>
+      <img src="@/assets/master.png" alt="Foto Rank" class="h-32 absolute -top-[50px] -right-[20px]">
+    </div>
+    <div class="relative flex items-center justify-between px-4 py-2">
+      <div class="flex flex-col justify-center">
+        <div class="flex items-center">
+          <UIIcon icon="mdi:user" txtSize="text-2xl" :size="8"/>
+          <span class="text-lg">Alessandreia Marta de Oliveira</span>
         </div>
-        <div class="h-6 flex items-center">
-          <UIIcon icon="ic:round-alternate-email" :size="6"/>
-          <span class="text-sm">{{ props.disciplina.emailProfessor }}</span>
+        <div class="flex items-center">
+          <UIIcon icon="ic:round-alternate-email" txtSize="text-2xl" :size="8"/>
+          <span class="text-lg">alessandreia@ufjf.br</span>
         </div>
+      </div>
+      <div>
         <img src="data:image/jpeg;base64,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" 
           alt="Foto Perfil"
-          class="absolute h-[60px] w-[60px] rounded-[50%] -top-[60%] right-4" 
+          class="absolute h-[80px] w-[80px] rounded-[50%] -top-[10%] right-5" 
         >
       </div>
-    </UICard>
-  </NuxtLink>
+    </div>
+  </UICard>
 </template>
 
 <script setup>
-const props = defineProps({
-  disciplina: { type: Object, required: true }
-});
 </script>
