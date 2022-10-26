@@ -1,6 +1,8 @@
 <template>
-  <div class="flex min-h-screen min-w-full">
+  <div class="flex">
     <Sidebar v-if="$route.fullPath !== '/login'"/>
-    <RouterView class="flex-1" />
+    <main class="w-full">
+      <RouterView class="flex-1" />
+    </main>
   </div>
 </template>

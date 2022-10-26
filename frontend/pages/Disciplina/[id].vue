@@ -1,6 +1,6 @@
 <template>
   <div>
-    <DisciplinaBanner class="xs:max-w-[90%] sm:max-w-[70%] xl:max-w-[60%]"/>
+    <DisciplinaBanner class="w-[90%] sm:w-[70%] xl:w-[60%]"/>
     <div class="m-auto xs:max-w-[90%] sm:max-w-[70%] xl:max-w-[60%]
       flex justify-between mt-5">
       <div class="w-[25%] lg:w-[20%]">
@@ -15,10 +15,7 @@
       </div>
       <div class="w-[70%] lg:w-[75%]">
         <DisciplinaCreatePost />
-        <!-- <DisciplinaPost />
         <DisciplinaPost />
-        <DisciplinaPost />
-        <DisciplinaPost /> -->
       </div>
     </div>
   </div>

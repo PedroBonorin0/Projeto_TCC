@@ -4,7 +4,7 @@
     <div class="text-center mt-2">
       <h1 class="font-bold text-3xl">Banco de Dados</h1>
       <span class="font-semibold">DCC060</span>
-      <img src="@/assets/master.png" alt="Foto Rank" class="h-32 absolute -top-[50px] -right-[20px]">
+      <img src="@/assets/noob.jfif" alt="Foto Rank" class="h-32 absolute -top-[50px] -right-[20px]">
     </div>
     <div class="relative flex items-center justify-between px-4 py-2">
       <div class="flex flex-col justify-center">
