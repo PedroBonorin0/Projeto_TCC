@@ -2,8 +2,8 @@
   <div>
     Welcome
     <div><NuxtLink class="underline" to="/login">Login</NuxtLink></div>
-    <div><NuxtLink class="underline" to="/user/123">user</NuxtLink></div>
-    <div><NuxtLink class="underline" to="/disciplina/123">disciplina</NuxtLink></div>
-    <div><NuxtLink class="underline" to="/listaDisciplinas">ListaDisciplinas</NuxtLink></div>
+    <div><NuxtLink class="underline" to="/user/123">User</NuxtLink></div>
+    <div><NuxtLink class="underline" to="/disciplinas">ListaDisciplinas</NuxtLink></div>
+    <div><NuxtLink class="underline" to="/disciplinas/123">Disciplina</NuxtLink></div>
   </div>
 </template>
