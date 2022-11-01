@@ -51,6 +51,7 @@ model Disciplina {
   codigo  String
   nome    String
   fotoUrl String?
+  cor     String  @default("#e4e4e7")
 
   alunoDisciplinas AlunoDisciplina[]
 
