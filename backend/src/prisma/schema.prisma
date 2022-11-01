@@ -17,18 +17,20 @@ model User {
   email        String  @unique
   fotoUrl      String?
 
-  posts     Post[]
-  aluno     Aluno?
-  professor Professor?
+  posts       Post[]
+  aluno       Aluno?
+  professor   Professor?
+  comentarios Comentario[]
 }
 
 model Aluno {
   matricula String  @unique
   exibeNome Boolean @default(true)
 
-  user            User              @relation(fields: [userId], references: [id])
-  userId          String            @unique
-  AlunoDisciplina AlunoDisciplina[]
+  user             User              @relation(fields: [userId], references: [id])
+  userId           String            @unique
+  alunoDisciplinas AlunoDisciplina[]
+  envioAtividades  EnvioAtividade[]
 
   @@id([userId])
 }
@@ -54,6 +56,8 @@ model Disciplina {
 
   Professor       Professor @relation(fields: [professorUserId], references: [userId])
   professorUserId String
+
+  posts Post[]
 }
 
 model Rank {
@@ -80,19 +84,57 @@ model AlunoDisciplina {
 model Aviso {
   id       String   @id @default(cuid())
   mensagem String
-  data     DateTime
+  data     DateTime @default(now())
 
   Professor       Professor @relation(fields: [professorUserId], references: [userId])
   professorUserId String
 }
 
 model Post {
-  id         String   @id @default(cuid())
-  mensagem   String
-  arquivoUrl String?
-  data       DateTime
-  tipo       String
+  id                  String   @id @default(cuid())
+  mensagem            String
+  arquivoUrl          String?
+  dataDisponibilidade DateTime @default(now())
+  tipo                String
 
-  User   User?   @relation(fields: [userId], references: [id])
-  userId String?
+  User   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  Atividade Atividade?
+
+  comentarios Comentario[]
+
+  Disciplina   Disciplina @relation(fields: [disciplinaId], references: [id])
+  disciplinaId String
+}
+
+model Comentario {
+  id       String @id @default(cuid())
+  mensagem String
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  post   Post   @relation(fields: [postId], references: [id])
+  postId String
+}
+
+model Atividade {
+  id    String   @id @default(cuid())
+  nota  Decimal?
+  prazo DateTime
+
+  post            Post             @relation(fields: [postId], references: [id])
+  postId          String           @unique
+  enviosAtividade EnvioAtividade[]
+}
+
+model EnvioAtividade {
+  id String @id @default(cuid())
+
+  atividade Atividade @relation(fields: [atividadeId], references: [id])
+
+  aluno       Aluno  @relation(fields: [alunoUserId], references: [userId])
+  alunoUserId String
+  atividadeId String
 }

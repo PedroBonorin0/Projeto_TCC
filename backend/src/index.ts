@@ -7,6 +7,8 @@ const userRoutes = routes.userRoutes;
 const disciplinaRoutes = routes.disciplinaRoutes;
 const rankRoutes = routes.rankRoutes;
 const alunoDisciplinaRoutes = routes.alunoDisciplinaRoutes;
+const postRoutes = routes.postRoutes;
+const avisoRoutes = routes.avisoRoutes;
 
 const app = express();
 
@@ -18,6 +20,8 @@ app.use(userRoutes);
 app.use(disciplinaRoutes);
 app.use(rankRoutes);
 app.use(alunoDisciplinaRoutes);
+app.use(postRoutes);
+app.use(avisoRoutes);
 
 const prisma = new PrismaClient();
 
