@@ -6,7 +6,7 @@
       <div class="w-[25%] lg:w-[20%]">
         <NuxtLink 
           v-for="link in links" 
-          :to="link.route"
+          :to="$route.path + '/' + link.route"
           class="border border-black/30 font-semibold flex items-center 
           justify-center bg-zinc-300 rounded-lg h-10 mb-2 cursor-pointer"
         >
@@ -23,9 +23,9 @@
 
 <script setup>
   const links = reactive([
-    { route: '#', name: 'Conteúdo' },
-    { route: '#', name: 'Atividades' },
-    { route: '#', name: 'Documentos' },
-    { route: '#', name: 'Notas' },
+    { route: 'conteudo', name: 'Conteúdo' },
+    { route: 'atividades', name: 'Atividades' },
+    { route: 'documentos', name: 'Documentos' },
+    { route: 'notas', name: 'Notas' },
   ])
 </script>

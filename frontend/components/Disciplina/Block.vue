@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/" class="max-w-[300px] items-center">
+  <NuxtLink to="/disciplinas/123" class="max-w-[300px] items-center">
     <UICard class="relative w-32 h-10 m-auto translate-y-3 text-center -z-50">
       <h1 class="font-semibold">{{ props.disciplina.codigo }}</h1>
     </UICard>
