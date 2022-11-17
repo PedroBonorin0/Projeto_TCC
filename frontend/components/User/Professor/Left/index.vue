@@ -7,9 +7,9 @@
        >
       <div class="ml-3 flex flex-col justify-center">
         <h1 class="font-semibold">Pedro Luiz Bonorino Braga</h1>
-        <span class="text-zinc-400 text-sm -translate-y-1">Aluno</span>
+        <span class="text-zinc-400 text-sm -translate-y-1">Professor</span>
       </div>
     </div>
-    <UserLeftForm />
+    <UserProfessorLeftForm />
   </UICard>
 </template>

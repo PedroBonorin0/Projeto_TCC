@@ -1,6 +1,6 @@
 <template>
   <UICard class="flex flex-col justify-center p-4 bg-white h-full w-96">
-    <UserRightDisciplina v-for="turma in turmas" :disciplinaInfo="turma"/>
+    <UserAlunoRightDisciplina v-for="turma in turmas" :disciplinaInfo="turma"/>
   </UICard>
 </template>
 

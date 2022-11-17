@@ -11,7 +11,7 @@
             />
           </header>
 
-          <div class="my-5 mx-0" v-if="props.hasBody" >
+          <div class="my-5 mx-2 text-center" v-if="props.hasBody" >
             <slot></slot>
           </div>
 
@@ -42,7 +42,7 @@ const emit = defineEmits(['close', 'confirmar', 'cancelar']);
 
 const props = defineProps({ 
   show: {type: Boolean, required: true },
-  hasBooter: {type: Boolean, default: false },
+  hasBody: {type: Boolean, default: false },
   title: {type: String, required: true },
   destaque: {type: String, required: true },
 });
